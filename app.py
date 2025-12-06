@@ -146,12 +146,12 @@ with col1:
 with col2:
     st.info(
         """
-        **Autores**  
-        - Juliana María Peña Suárez  
-        - Juan Esteban Atehortúa Sánchez  
-        - Nikol Tamayo Rua  
+        **Autores**
+        - Juliana María Peña Suárez
+        - Juan Esteban Atehortúa Sánchez
+        - Nikol Tamayo Rua
 
-        **Curso:** Deep Learning Avanzado – IUDigital  
+        **Curso:** Deep Learning Avanzado – IUDigital
         **Docente:** Laura Alejandra Sánchez
         """,
         icon="👩‍💻",
@@ -201,8 +201,8 @@ st.sidebar.markdown(
     """
     **Descripción de los experimentos**
 
-    - *Exp 1:* DCGAN baseline (10 épocas).  
-    - *Exp 2:* Más épocas de entrenamiento (20 épocas).  
+    - *Exp 1:* DCGAN baseline (10 épocas).
+    - *Exp 2:* Más épocas de entrenamiento (20 épocas).
     - *Exp 3:* Misma arquitectura, pero tasa de aprendizaje del discriminador más baja.
     """
 )
@@ -238,8 +238,8 @@ if debe_generar:
                 """
                 **Experimento 1 – Baseline**
 
-                - Arquitectura DCGAN estándar.  
-                - 10 épocas de entrenamiento.  
+                - Arquitectura DCGAN estándar.
+                - 10 épocas de entrenamiento.
                 - Buen equilibrio entre realismo y estabilidad, aunque algunas prendas
                   son borrosas o poco definidas.
                 """
@@ -249,8 +249,8 @@ if debe_generar:
                 """
                 **Experimento 2 – Más épocas**
 
-                - Mismo modelo, pero entrenado durante 20 épocas.  
-                - Mejora la nitidez y la forma de las prendas.  
+                - Mismo modelo, pero entrenado durante 20 épocas.
+                - Mejora la nitidez y la forma de las prendas.
                 - Ligero riesgo de sobreajuste, pero mantiene buena diversidad.
                 """
             )
@@ -259,8 +259,8 @@ if debe_generar:
                 """
                 **Experimento 3 – lrD más bajo**
 
-                - Se reduce la tasa de aprendizaje del discriminador.  
-                - Permite que el generador explore más antes de ser penalizado.  
+                - Se reduce la tasa de aprendizaje del discriminador.
+                - Permite que el generador explore más antes de ser penalizado.
                 - Las prendas son razonablemente nítidas y variadas.
                 """
             )
@@ -273,10 +273,10 @@ st.markdown(
     """
     ### 📌 Notas técnicas
 
-    - Modelo: **DCGAN** entrenado sobre Fashion-MNIST (28x28, escala de grises).  
+    - Modelo: **DCGAN** entrenado sobre Fashion-MNIST (28x28, escala de grises).
     - Hiperparámetros principales:
-        - Vector de ruido `z` de dimensión 100.  
-        - Activación final `Tanh`, salida normalizada en [-1, 1].  
+        - Vector de ruido `z` de dimensión 100.
+        - Activación final `Tanh`, salida normalizada en [-1, 1].
     - La app está pensada como **complemento visual** del cuaderno de entrenamiento,
       donde se incluyen las métricas (realismo, diversidad, IS proxy) y los análisis
       de cada experimento.
