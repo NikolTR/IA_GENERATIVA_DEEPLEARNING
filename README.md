@@ -1,98 +1,70 @@
-🧬 Generación de Imágenes con DCGAN — Proyecto de IA Generativa
+Generación de Imágenes con DCGAN — Proyecto de IA Generativa
 
-Este proyecto implementa una Red Generativa Antagónica (GAN) del tipo DCGAN entrenada para generar imágenes a partir del dataset Fashion-MNIST, que contiene 70,000 imágenes en escala de grises de prendas de ropa (10 clases).
-Incluye:
+Este proyecto implementa una Red Generativa Antagónica (DCGAN) entrenada sobre Fashion-MNIST, un dataset compuesto por 70,000 imágenes en escala de grises (28×28) de distintas prendas de vestir.
+Incluye un notebook de entrenamiento, tres experimentos comparativos y una aplicación interactiva en Streamlit para generar imágenes utilizando los modelos entrenados.
 
-Notebook de entrenamiento con 3 experimentos comparativos
+Características principales
 
-Aplicación interactiva en Streamlit para usar los generadores entrenados
+Implementación completa de una DCGAN con PyTorch
 
-Modelos .pth listos para probar
+Entrenamiento sobre Fashion-MNIST
 
-Código modular, limpio y fácil de extender
+Tres experimentos comparativos:
 
-📌 Características principales
-✔ Entrenamiento completo de DCGAN
+Experimento 1 – Baseline
 
-Implementación de Generador y Discriminador basados en convoluciones transpuestas.
+Experimento 2 – Más épocas
 
-Normalización por batch, pesos inicializados tipo DCGAN y arquitectura recomendada por el paper original.
+Experimento 3 – Tasa de aprendizaje del discriminador reducida
 
-Registro continuo del entrenamiento con torch.utils.make_grid.
+Aplicación en Streamlit para usar los generadores (.pth)
 
-✔ Tres experimentos de entrenamiento
+Código modular y fácil de extender
 
-Experimento 1 – Baseline: configuración clásica de DCGAN
-
-Experimento 2 – Más épocas: se entrena por más tiempo para evaluar mejora
-
-Experimento 3 – lrD más bajo: se ajusta la tasa de aprendizaje del discriminador
-
-✔ Aplicación Streamlit integrada
-
-Genera imágenes con cualquier modelo entrenado
-
-Slider para generar múltiples imágenes
-
-Visualización en cuadrícula
-
-Soporte para GPU si está disponible
-
-🚀 Demo (Streamlit)
-
-Ejecuta la App:
-
-streamlit run App.py
-
-📁 Estructura del proyecto
+Estructura del proyecto
 IAGENERATIVA_DEEPLEARNING/
 │
 ├── App.py                         # Aplicación Streamlit
 ├── requirements.txt               # Dependencias
 ├── IAGENERATIVA_DEEPLEARNING.ipynb  # Notebook de entrenamiento
 │
-├── modelos/                       # Modelos DCGAN guardados
+├── modelos/                       # Modelos DCGAN generados
 │     ├── exp1_baseline.pth
 │     ├── exp2_mas_epocas.pth
 │     └── exp3_lrD_bajo.pth
 │
 └── README.md
 
-🏗 Arquitectura de la DCGAN
+Arquitectura de la DCGAN
 Generador
 
-Entrada: vector ruido z (100 dimensiones)
+Entrada: vector de ruido z (100 dimensiones)
 
-Capas: ConvTranspose2d + BatchNorm + ReLU
+Capas: ConvTranspose2d, BatchNorm, ReLU
 
-Salida: imagen 28×28 en escala de grises con Tanh (propio de Fashion-MNIST)
+Salida: imagen 28×28×1, normalizada con Tanh
 
 Discriminador
 
-Entrada: imagen real/falsa 28×28×1
+Entrada: imagen 28×28×1
 
-Capas: Conv2d + BatchNorm + LeakyReLU
+Capas: Conv2d, BatchNorm, LeakyReLU
 
-Salida: probabilidad real/falso
+Salida: probabilidad real/falso (sigmoid)
 
-🔥 Entrenamiento
+Entrenamiento
 
-Desde el notebook:
+Para ejecutar el notebook:
 
-!pip install torch torchvision matplotlib
+pip install torch torchvision matplotlib
 
 
-Luego ejecuta todas las celdas del archivo:
+Luego abre y ejecuta:
 
 IAGENERATIVA_DEEPLEARNING.ipynb
 
 
-Los modelos se guardan automáticamente en:
-
-/modelos
-
-
-con los nombres:
+El notebook guarda los modelos automáticamente en la carpeta modelos/:
 
 exp1_baseline.pth
 
@@ -100,75 +72,54 @@ exp2_mas_epocas.pth
 
 exp3_lrD_bajo.pth
 
-🧪 Resultados de los experimentos
+Resultados de los experimentos
 Dataset: Fashion-MNIST
 
-Imágenes 28×28
+Imágenes: 28×28 píxeles
 
 Escala de grises
 
-Clases como: camiseta, zapato, abrigo, bolso, sneaker, etc.
+Clases: camisetas, zapatos, bolsos, abrigos, sneakers, etc.
 
 Experimento 1 – Baseline
 
-20 épocas
-
-Buen comienzo; formas reconocibles pero con ruido
-
-📸 Placeholder
-(Agrega aquí exp1_result.png)
+Entrenamiento estándar: formas reconocibles, con algo de ruido.
+(Agregar aquí la imagen exp1_result.png)
 
 Experimento 2 – Más épocas
 
-40 épocas
-
-Imágenes más nítidas
-
-Mejor definición de contornos y formas
-
-📸 Placeholder
-(Agrega aquí exp2_result.png)
+Mejor definición y reducción de artefactos.
+(Agregar aquí exp2_result.png)
 
 Experimento 3 – lrD más bajo
 
-Discriminador más estable
+Mejor estabilidad del discriminador y formas más consistentes.
+(Agregar aquí exp3_result.png)
 
-Menos artefactos y mayor coherencia visual
+Uso de la aplicación Streamlit
 
-📸 Placeholder
-(Agrega aquí exp3_result.png)
+Ejecutar:
 
-🎛 Uso de la App
-Seleccionar el modelo
-
-En el panel lateral de Streamlit puedes elegir entre:
-
-Experimento 1 – Baseline
-
-Experimento 2 – Más épocas
-
-Experimento 3 – lrD más bajo
-
-Generar imágenes
-
-Selecciona el modelo
-
-Ajusta cuántas imágenes generar
-
-Haz clic en “Generar imágenes”
-
-🛠 Instalación y ejecución
-1. Clonar el repositorio
-git clone https://github.com/tuusuario/IAGENERATIVA_DEEPLEARNING.git
-cd IAGENERATIVA_DEEPLEARNING
-
-2. Instalar dependencias
-pip install -r requirements.txt
-
-3. Ejecutar la App
 streamlit run App.py
 
-📦 Dependencias principales
+
+La aplicación permite:
+
+Seleccionar uno de los tres modelos
+
+Elegir cuántas imágenes generar
+
+Visualizar las muestras en cuadrícula
+
+Instalación completa
+git clone https://github.com/tuusuario/IAGENERATIVA_DEEPLEARNING.git
+cd IAGENERATIVA_DEEPLEARNING
+pip install -r requirements.txt
+streamlit run App.py
+
+Dependencias principales
+
+Python 3.9+
 
 PyTorch
 
@@ -180,7 +131,10 @@ Matplotlib
 
 NumPy
 
+Contribuciones
 
-📜 Licencia
+Las contribuciones son bienvenidas mediante Issues o Pull Requests.
+
+Licencia
 
 Este proyecto se distribuye bajo la licencia MIT.
