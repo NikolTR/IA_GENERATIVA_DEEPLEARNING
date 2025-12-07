@@ -76,10 +76,10 @@ IAGENERATIVA_DEEPLEARNING/
 
 ## Entrenamiento
 
-Para ejecutar el notebook:
+Instalar dependencias:
 
 ```bash
-pip install torch torchvision matplotlib tqdm pandas
+pip install -r requirements.txt
 ```
 
 Luego abre y ejecuta:
