@@ -2,6 +2,8 @@
 
 Este proyecto implementa una Red Generativa Antagónica (DCGAN) entrenada sobre Fashion-MNIST, un dataset compuesto por 60,000 imágenes de entrenamiento en escala de grises redimensionadas a 64×64 píxeles de distintas prendas de vestir. Incluye un notebook de entrenamiento, tres experimentos comparativos con evaluación cuantitativa y una aplicación interactiva en Streamlit para generar imágenes utilizando los modelos entrenados.
 
+“La problemática abordada es la necesidad de generar rápidamente propuestas visuales de prendas para prototipado en moda digital y comercio electrónico. Esto permite acelerar procesos creativos, reducir costos y apoyar a diseñadores junior.”
+
 ---
 
 ## Características principales
