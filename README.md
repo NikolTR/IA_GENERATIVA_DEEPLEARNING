@@ -2,6 +2,8 @@
 
 Este proyecto implementa una Red Generativa Antagónica (DCGAN) entrenada sobre Fashion-MNIST, un dataset compuesto por 60,000 imágenes de entrenamiento en escala de grises redimensionadas a 64×64 píxeles de distintas prendas de vestir. Incluye un notebook de entrenamiento, tres experimentos comparativos con evaluación cuantitativa y una aplicación interactiva en Streamlit para generar imágenes utilizando los modelos entrenados.
 
+La problemática abordada es la necesidad de generar rápidamente propuestas visuales de prendas para prototipado en moda digital y comercio electrónico. Esto permite acelerar procesos creativos, reducir costos y apoyar a diseñadores junior.
+
 ---
 
 ## Características principales
@@ -21,21 +23,18 @@ Este proyecto implementa una Red Generativa Antagónica (DCGAN) entrenada sobre 
 
 ```
 IAGENERATIVA_DEEPLEARNING/
-│
-├── App.py                              # Aplicación Streamlit
-├── requirements.txt                    # Dependencias
-├── IAGENERATIVA_DEEPLEARNING.ipynb     # Notebook de entrenamiento
-│
-├── modelos/                            # Modelos DCGAN generados
-│     ├── exp1_baseline.pth
-│     ├── exp2_mas_epocas.pth
-│     └── exp3_lrD_bajo.pth
-│
-├── imagenes_exp1_baseline/             # Imágenes por época
-├── imagenes_exp2_mas_epocas/
-├── imagenes_exp3_lrD_bajo/
-│
-└── README.md
+├── modelos/
+│   ├── exp1_baseline.pth
+│   ├── exp2_mas_epocas.pth
+│   └── exp3_lrD_bajo.pth
+├── documentacion/
+│   ├── Manual_Instalacion.pdf
+│   └── Guia_Usuario.pdf
+├── Peña_Atehortua_Tamayo__EA3_GenerativeAI_App.py
+├── IAGENERATIVA_DEEPLEARNING.ipynb
+├── README.md
+├── requirements.txt
+└── .gitignore
 ```
 
 ---
